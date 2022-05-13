@@ -12,7 +12,7 @@ const Home = ({navigation}) => {
   const [info, setInfo] = useState({
     widgetType: 'payment-summary',
     locale: 'en',
-    numInstalments: null,
+    numInstalments: 1,
     merchantId: 'id_c56705f1a9304e8c8a16e1da98ec8734',
     amount: '20050',
     currency: 'AED',
@@ -64,13 +64,16 @@ const Home = ({navigation}) => {
           }}
         />
         <Title value="numInstalments" />
-        <TextInput
+        {/* <TextInput
           defaultValue={info.numInstalments}
           style={styles.input}
           onChangeText={val => {
             updateValue('numInstalments', val);
           }}
-        />
+        /> */}
+        <View style={styles.row}>
+          {[1, 3].map(renderButton('numInstalments'))}
+        </View>
         <Title value="widgetUrl" />
         <TextInput
           defaultValue={info.widgetUrl}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, ScrollView} from 'react-native';
+import {StyleSheet, ScrollView} from 'react-native';
 import {PostpayWidget} from 'react-native-postpay-widget';
 
 const Widget = ({route}) => {
@@ -12,9 +12,9 @@ const Widget = ({route}) => {
     currency,
     widgetUrl,
   } = route.params || {};
-  console.log(route.params);
+
   return (
-    <ScrollView style={{flex: 1, backgroundColor: '#fff'}}>
+    <ScrollView style={styles.container}>
       <PostpayWidget
         merchantId={merchantId}
         widgetType={widgetType}
@@ -23,12 +23,6 @@ const Widget = ({route}) => {
         locale={locale}
         widgetUrl={widgetUrl}
         numInstalments={numInstalments}
-        style={
-          {
-            //   paddingHorizontal: 20,
-            // marginTop: DIMENSION_PADDING_SMALL,
-          }
-        }
       />
     </ScrollView>
   );
@@ -36,4 +30,6 @@ const Widget = ({route}) => {
 
 export default Widget;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {flex: 1, backgroundColor: '#fff'},
+});
