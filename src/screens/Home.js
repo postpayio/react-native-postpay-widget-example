@@ -64,13 +64,6 @@ const Home = ({navigation}) => {
           }}
         />
         <Title value="numInstalments" />
-        {/* <TextInput
-          defaultValue={info.numInstalments}
-          style={styles.input}
-          onChangeText={val => {
-            updateValue('numInstalments', val);
-          }}
-        /> */}
         <View style={styles.row}>
           {[1, 3].map(renderButton('numInstalments'))}
         </View>
